@@ -52,8 +52,19 @@ function Home() {
  
 
   return (
-    <div>
-    <TrendingMovies call1={call1}/>
+    <div className="container">
+
+
+{/* <HeroSlide/> */}
+                <div className="section mb-3">
+                    <div className="section__header mb-2">
+                        <h2>Trending Movies</h2>
+                        <Link to="/movie">
+                            <OutlineButton className="small">View more</OutlineButton>
+                        </Link>
+                    </div>
+                    <MovieList category={category.movie} type={movieType.popular}/>
+                </div>
     <TopRatedMovies call2={call2}/>
     <TrendingTV call3={call3}/>
     <TopRatedTV call4={call4}/>
