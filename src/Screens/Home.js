@@ -52,10 +52,11 @@ function Home() {
  
 
   return (
-    <div className="container">
+    <div>
 
 
-{/* <HeroSlide/> */}
+        {/* <HeroSlide/>
+            <div className="container">
                 <div className="section mb-3">
                     <div className="section__header mb-2">
                         <h2>Trending Movies</h2>
@@ -64,7 +65,8 @@ function Home() {
                         </Link>
                     </div>
                     <MovieList category={category.movie} type={movieType.popular}/>
-                </div>
+                </div> */}
+    <TrendingMovies call1={call1}/>
     <TopRatedMovies call2={call2}/>
     <TrendingTV call3={call3}/>
     <TopRatedTV call4={call4}/>
