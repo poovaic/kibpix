@@ -6,6 +6,8 @@ import {Route,Routes} from 'react-router-dom';
 import Movies from './Screens/Movies';
 import TVShows from './Screens/TVShows';
 import NoMatch from './Screens/NoMatch';
+import TVShowDetails from './Screens/TVShowDetails';
+
 
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
         <Route path="/Movies" element={<Movies/>}/>
         <Route path="/Movies/:id" element={<Movies/>}/>
         <Route path="/TVShows" element={<TVShows/>}/>
-        <Route path="/TVShows/:id" element={<TVShows/>}/>
+        <Route path="/TVShows/:tvshow_id" element={<TVShowDetails/>}/>
         <Route path="/*" element={<NoMatch/>}/>
       </Routes>
 
