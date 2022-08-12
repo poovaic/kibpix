@@ -1,0 +1,67 @@
+@use "../Scss/" as *;
+
+.home{
+    margin:0;
+    background-color: black;
+    
+}
+.home-container{
+  
+    .home-first-div{
+        height:25%;
+    }
+}
+.title-toprated-movies{
+    color:white;
+    font-family: $font-family;
+    @include mobile {
+        font-size: 1rem;
+
+    }
+
+}
+.title-trending-movies{
+    color:white;
+    font-family: $font-family;
+    @include mobile {
+        font-size: 1rem;
+
+    }
+}
+.title-toprated-tv{
+    color:white;
+    font-family: $font-family;
+    @include mobile {
+        font-size: 1rem;
+
+    }
+}
+.title-trending-tv{
+    color:white;
+    font-family: $font-family;
+    @include mobile {
+        font-size: 1rem;
+
+    }
+}
+.toprated-movies{
+    padding-bottom: 2rem;
+}
+
+.toprated-tv{
+    padding-bottom: 2rem;
+}
+.title-marvelcomics{
+    color:white;
+    font-family: $font-family;
+    
+    @include mobile {
+        font-size: 1rem;
+
+    }
+
+}
+.marvelcomics{
+    padding-bottom: 2rem;
+
+}

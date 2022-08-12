@@ -1,0 +1,68 @@
+@use "../Scss/" as *;
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    //background-color: black;
+
+}
+.toprated-movies{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    overflow: scroll;
+
+}
+.toprated-movies-component{
+    width:300px;
+    margin:1rem;
+    // background: linear-gradient(to left, rgb(231, 13, 50));
+    // box-shadow: 0 7px 12px rgb(219, 16, 50) ;
+    // border-radius: 1.5rem;
+
+
+
+    img{
+        width: 280px;
+        height: 400px;
+        border-radius: 2rem;
+        transition: 0.5s;
+        @include mobile {
+            width: 200px;
+            height:320px;
+        }
+       }
+       .movie-info{
+        width:100%;
+        font-family: $font-family;
+        font-stretch: fit;
+        text-overflow:hidden;
+        height:100px;
+       
+        @include mobile {
+            font-size: 0.8rem;
+            height:70px;
+
+        }
+
+       }
+
+   
+}
+.toprated-movies-component:hover{
+color:$main-color;
+
+
+img{
+    opacity:0.3;
+    width:290px;
+    height:410px;
+    @include mobile {
+        width: 210px;
+        height:330px;
+    }
+    //background: linear-gradient(to left, rgb(231, 13, 50));
+//box-shadow: 0 7px 12px rgb(219, 16, 50) ;
+}
+}
