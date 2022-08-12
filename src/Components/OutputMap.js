@@ -2,12 +2,11 @@ import React from 'react'
 import TvShowOut from '../Components/TvShowOut'
 
 function OutputMap(props) {
-//    const originalImage = `https://image.tmdb.org/t/p/original/${imgPath}`
-//    const  w500Image =  `https://image.tmdb.org/t/p/w500/${imgPath}`
+
 const {mapping} = props            
 
   return (
-    <div>
+    <div className='SearchOutput'>
                  { mapping.map((show)=>{
                     
 

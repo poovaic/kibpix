@@ -12,14 +12,15 @@ function Popular(props) {
 
 
   return (
-    <div>
+    <div className="popular">
+    
         {map && map.map((item)=>{
-            return <div   key={item.id} >
+            return <div  className='populartv' key={item.id} >
               
                 <img  onClick={()=> navigate(`/TvShows/${item.id}`)}  src={w500Image + item.poster_path} alt="Post banner" />
                 <h3>{item.name}</h3>
-
-    </div>
+                </div>
+    
        })}
     </div>
   )

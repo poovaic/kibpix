@@ -52,7 +52,8 @@ function Home() {
  
 
   return (
-    <div>
+    <div className="home">
+        <div className="home-container">
 
 
         {/* <HeroSlide/>
@@ -70,6 +71,7 @@ function Home() {
     <TopRatedMovies call2={call2}/>
     <TrendingTV call3={call3}/>
     <TopRatedTV call4={call4}/>
+      </div>
     </div>
   )
 }

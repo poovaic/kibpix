@@ -1,193 +1,140 @@
 import  { useState , useEffect} from 'react'
 import {useParams} from "react-router-dom"
 import axios from "axios"
-import {useNavigate} from "react-router-dom"
-
+//import {useNavigate} from "react-router-dom"
 import React from 'react'
+import './tvshowdetails.scss';
+
+
+const picConfig = {
+  w300Image: (imgPath) => `https://image.tmdb.org/t/p/w300/${imgPath}`,
+  originalImage: (imgPath) => `https://image.tmdb.org/t/p/original/${imgPath}`,
+  w500Image: (imgPath) => `https://image.tmdb.org/t/p/w500/${imgPath}`
+}
 
 function TvShowDetails() {
-   
-    const navigate = useNavigate();
-    const {tvshow_id} = useParams();
-      console.log("showid",tvshow_id)
 
-      const[idData , setIdData ] = useState('')
-      const[idVideo , setIdVideo ] = useState('')
+      //const navigate = useNavigate();
+      const {tvshow_id} = useParams();
+      //console.log("tvshow_id",tvshow_id)
+      const[tvTrailer , setTvTrailer]= useState('');
+      const[tvCast , setTvCast ] = useState('')
+      const[description,setDescription ]=useState('')
 
-      const BASE_URL = "https://api.themoviedb.org/3"
-        const API_KEY = "b990552aaa8b2d4d2ccfc84e824bd713"
-        const VIDEO_URL = "https://www.youtube.com/embed?v="
-        //https://www.youtube.com/watch?v=
-        //https://youtu.be/
-
-      async function getCredits(id ){
-  
-        
-          //credits  https://api.themoviedb.org/3/tv/66732/credits?api_key=b990552aaa8b2d4d2ccfc84e824bd713&language=en-US
-          //videos   https://api.themoviedb.org/3/tv/66732/videos?api_key=b990552aaa8b2d4d2ccfc84e824bd713&language=en-US
+       
+       const VIDEO_URL = "https://www.youtube.com/watch?v="  ;
+       const BASE_URL = "https://api.themoviedb.org/3"
+       const API_KEY = "b990552aaa8b2d4d2ccfc84e824bd713"
 
 
-             const response = await  axios.get(`${BASE_URL}/tv/${id}/credits?api_key=${API_KEY}&language=en-US`);
-          
-          
-            console.log("id api for credits",response);
-            let output= response.data;
-            console.log("2nd api call credits", output)
-                    
-          
-                   setIdData(output);
-                   
-           }
-
-
-           async function getVideo(id ){
-  
-               const responsevideo = await  axios.get(`${BASE_URL}/tv/${id}/videos?api_key=${API_KEY}&language=en-US`);
-            //https://api.themoviedb.org/3/tv/66732/videos?api_key=b990552aaa8b2d4d2ccfc84e824bd713&language=en-US
-            
-              console.log("id api for videos",responsevideo);
-              let output2= responsevideo.data.results;
-              console.log("2nd api call videos", output2)
-                      
-            
-                     setIdVideo(output2);
-                     
-             }
-  
-
-     
-     
-     
-//       useEffect(()=>{
-  
-//      getCredits(tvshow_id )
-//      getVideo(tvshow_id)
-  
-
-  
-//   },[tvshow_id])
-
-     
-  console.log("idvidoe.name", idVideo[0].name )
-   console.log("idvidoe", VIDEO_URL+idVideo[0].key )
-  return (
-    <div>TvShowDetails
-
-         <h1>{idVideo[0].name}</h1>
+      //  async function getVideos(id ){
    
         
 
-    <iframe width="420" height="345" src={VIDEO_URL + idVideo[0].key }> 
-      </iframe> 
+      //   const videoresponse = await  axios.get(`${BASE_URL}/tv/${id}/videos?api_key=${API_KEY}&language=en-US`);
+      
+      //   console.log(" trailervideo",videoresponse);
+      //   let outputvideo= videoresponse.data;
+      //   console.log("cast", outputvideo)
+       
+      //       setTvTrailer(outputvideo);      
+             
+      //  }
 
-    </div>
-  )
+
+
+
+       async function getCredits(id ){
+   
+        
+
+          const castresponse = await  axios.get(`${BASE_URL}/tv/${id}/credits?api_key=${API_KEY}&language=en-US`);
+        
+          console.log(" credits",castresponse);
+          let output= castresponse.data;
+          console.log("cast", output)
+         
+              setTvCast(output);      
+               
+         }
+
+         async function getDetails(id ){
+   
+          const detailsresponse = await  axios.get(`${BASE_URL}/tv/${id}?api_key=${API_KEY}&language=en-US`);
+          console.log(" credits",detailsresponse);
+          let detail= detailsresponse.data;
+          console.log("cast", detail)
+         
+              setDescription(detail);      
+               
+         }
+         console.log("setcast",tvCast)
+           console.log("description",description)
+         useEffect(()=>{
+         // getVideos(tvshow_id)
+          getDetails(tvshow_id )
+          getCredits(tvshow_id )
+            // getVideo(params.tvshow_id)
+           },[tvshow_id])
+
+
+        // console.log( description.backdrop_path)
+        // console.log( originalpic + description.backdrop_path)
+        console.log( "overview",description.overview)
+        console.log( "posterpath",`${picConfig.originalImage(description.poster_path )}`)
+        
+           //let backgroundimage = 
+
+         return(
+          
+<div>
+             
+             <div className='banner' style={{backgroundImage:`url(${picConfig.originalImage(description.backdrop_path || description.poster_path)})`}}></div>
+            <div className='mb-3 movie-content container'>
+               <div className='movie-content__poster'>
+                {/* <img className='movie-content__poster__img' src={`${picConfig.originalImage(description.poster_path || description.backdrop_path)}`}  alt="pic"/> */}
+                <div className='movie-content__poster__img' style={{backgroundImage:`url(${picConfig.originalImage(description.poster_path || description.backdrop_path)})`}} ></div>
+    
+                 <div className='movie-content__info'>
+                  <h1 className='title'>{description.original_name}</h1>
+                  <div className="genres">
+                       {description.genres && description.genres.map((item) => (
+                         <span className='genres__item'  key={item.name}>{item.name}</span>
+                      ))}
+                  </div>
+                      <p className='overview'>{description.overview}</p>
+                      <div className='cast'>
+                        <div className='section__header'>
+                          <h2>Casts</h2>
+                        </div>
+                        <div className='casts'>
+                        {tvCast.cast && tvCast.cast.slice(0, 5).map((item) => {
+                          return(
+                            <div className="casts__item">                                        
+                            <div className="casts__item__img"  style={{backgroundImage:`url(${picConfig.w500Image(item.profile_path)})`}} key={item.id} ></div>
+                              {/* <img className="casts_item_img" src={`${picConfig.w500Image(item.profile_path )}`}  alt="pic"/> */}
+                               <p className="casts__item__name" key={item.name} >{item.name}</p>
+                              </div>
+                               )
+                           })}
+                        
+                      </div> 
+                       </div>
+                 </div> 
+               </div>
+               <div className='container'>
+                <div className='section mb-3'>
+                     {
+
+                     }
+                </div>
+               </div>
+            </div>
+          
+          </div>
+         )
 }
 
 export default TvShowDetails
 
 
-// function Recipe() {
-//     //console.log("props in post", props)
-  
-  
-  
-//     const navigate = useNavigate();
-  
-  
-//       const {recipe_id} = useParams();
-//       console.log("receipe",recipe_id)
-//   //extracting id from url 
-//   const[idData , setIdData ] = useState('')
-//   const[button,setButton]= useState("")
-  
-//   const [summary, setSummary] = useState('false')
-  
-//            async function getInstructions(id ){
-  
-//     const BASE_URL = "https://api.spoonacular.com"
-//     const API_KEY = '58888b98c21c4a9db6db18650100b025'
-  
-//     try{
-//     const response = await  axios.get(`${BASE_URL}/recipes/${id}/information?apiKey=${API_KEY}`);
-  
-  
-//     console.log("id api ",response);
-//     let output= response.data;
-//     console.log("2nd api call data", output)
-            
-  
-//            setIdData(output);
-           
-//     }
-//     catch(error){
-//             return (error)
-//     }
-  
-//   }
-  
-//   const instructions = () => {
-//     setSummary("true");
-//     setButton("instructions");
-//   }
-//   const ingredients = () => {
-//     setSummary("true");
-//     setButton("ingredients");
-//   }
-  
-  
-  
-//   useEffect(()=>{
-  
-//     getInstructions(recipe_id )
-  
-//     // setPosts(props.postsData);
-  
-//   },[recipe_id])
-  
-  
-//       return(
-          
-//           <div className="wrapper">
-//                 <div>
-//                  <h2>{idData.title}</h2> 
-//                  <img src={idData.image} alt="food pic" />
-                
-//                 </div>
-//             <div className='info'>
-//                   <button className={`insButton , ${button==="instructions"? "active": ""}`}   onClick={instructions}>Instructions</button>
-//                   <button className={`insButton , ${button==="ingredients"? "active": ""} `}  onClick={ingredients}>Ingredients</button>
-  
-//                   {button === "instructions" && (   
-//                     <h3 dangerouslySetInnerHTML={{ __html: idData.instructions }}></h3>
-//                 )}
-  
-                      
-//                  {button === "ingredients" && (
-//                   <ul>
-//                     {idData.extendedIngredients && idData.extendedIngredients.map((ingredient) => (
-//                      <li key={ingredient.id}>{ingredient.original}</li> 
-//                    ))}
-//                   </ul>
-//                 )}
-                 
-//                 {summary === "false" && (
-//                  <div  className='summary'>
-//                  <p dangerouslySetInnerHTML={{ __html: idData.summary }}></p>
-//                  </div>
-  
-                 
-         
-//       )}   
-//                  <div  className='returnTag '>
-//                   <h3 >Time to make : {idData.readyInMinutes} minutes</h3>
-//                  <a href={idData.sourceUrl}>source website</a> <br  />
-//                  <button  onClick={() => navigate(-1)}>Previous Page </button>
-//                  </div>
-//                  </div>
-//           </div>
-//       )
-//   }
-  
-//   export default Recipe
-  

@@ -4,6 +4,7 @@ import {popularTvShows,searchTvShows} from "../Services/ApiCallTv"
 import OutputMap from '../Components/OutputMap';
 import Error from './Error';
 import Popular from "../Components/Popular";
+import TvRoundedIcon from '@mui/icons-material/TvRounded';
 
 
 function TVShows() {
@@ -24,7 +25,6 @@ function TVShows() {
   
   
   const getPopular =async() =>{
-      
    
      let response1 = await popularTvShows();
     console.log("popularshows response",response1)
@@ -40,8 +40,8 @@ function TVShows() {
     if(search!==""){
     let response = await searchTvShows(search);
     console.log("api response",response)
-
-    if( response.data.results.length!==0){
+    setPopular('');
+     if( response.data.results.length!==0){
       let output=response.data.results;
       console.log('output',output)
        
@@ -49,11 +49,12 @@ function TVShows() {
        setClick(output)
        setError("")
     }
-    else{
+      else{
       setError(`There are no results for ${search} `)
     }
   }
     else{
+      
         setError("Type the name of the Tv show you want in the box")
     }
  console.log("click", click);
@@ -63,8 +64,9 @@ function TVShows() {
   
   
   return (
-    <div>
-        <h1>TVshows</h1>
+    <div className='tvShows'>
+        <h1>< TvRoundedIcon />  Tv Shows  < TvRoundedIcon />
+         </h1>
         <input  type="text" placeholder="Search Your Tvshow...."  onChange={(e)=>setSearch(e.target.value)} />
      
      <button    onClick={buttonClick}  > Search </button>

@@ -1,0 +1,151 @@
+@use "../Scss/" as *;
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+
+}
+// .header {
+//     height: $header-height;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     z-index: 99;
+//     transition: height 0.3s ease, background-color 0.3s ease;
+
+//     &.shrink {
+//         height: $header-shrink-height;
+//         background-color: $body-bg;
+//     }
+// }
+nav:hover{
+    // left:1px;
+    // top:10px;
+    // position:absolute;
+}
+
+nav{
+    height:70px;
+    z-index: 99;
+    transition: height 0.3s ease, background-color 0.3s ease;
+  position:fixed;
+    //background-color: black;
+    color:white;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size:1.3rem;
+    padding-bottom: 0.5em;
+    width: 100%;
+
+    @include mobile {
+        font-size:1rem;
+
+    }
+}
+.navlink {
+    
+    text-decoration: none;
+    list-style-type: none;
+    padding:20px 10px;
+    color:white !important;
+    height:60px;
+    font-size: 1.7rem;
+    padding-right:2.5rem;
+    padding-left:2.5rem;
+    font-weight:600;
+    text-align: center;
+    align-items: center;
+    @include mobile {
+        font-size:1rem;
+        padding-right:0.5rem;
+        padding-left:0.5rem;
+
+    }
+
+}
+
+.navlink1{
+
+    text-decoration: none;
+    font-size: 3.7rem;
+
+    list-style-type: none;
+    color:white !important;
+    // align-items: center;
+    margin-left:10px;
+    
+
+    @include mobile {
+        font-size:1.5rem;
+
+    }
+
+
+}
+
+
+//   nav {
+//     padding-bottom: 0.5em;
+//     display: flex;
+//     width: 100%;
+//     background: black;
+//     align-items: center;
+//     height: 60px;
+//     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.4);
+//     // text-decoration: none;
+//     font-size:1.4rem;
+//     text-decoration-color:white;
+//     list-style:none;
+
+//    }
+// nav .a{
+//    text-decoration-color:white;
+// }
+//   .links{
+//     text-decoration: none;
+
+//   }
+  .logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: auto;
+    margin-top:1%;
+    margin-bottom:1%;
+
+    margin-left:20px;
+  }
+
+//     @include flex(center, unset);
+
+    img {
+        width: 50px;
+        align-items: center;
+        margin-top: 10%;
+
+        @include mobile {
+            width: 30px;
+            margin-right: 0;
+        }
+     }
+//}
+
+
+
+
+
+.navlink:hover{
+    // background: #5db8ff;
+    text-decoration: none;
+    border-bottom: 3px solid #a21a1a;
+    color: red !important;
+
+ }
+ 
+.navlink1:hover{
+    color:red !important;
+    
+    }
