@@ -19,7 +19,7 @@ function App() {
 
         <Route path="/" element={<Home/>}/>
         <Route path="/Movies" element={<Movies/>}/>
-        <Route path="/Movies/:id" element={<Movies/>}/>
+        {/* <Route path="/Movies/:id" element={<Movies/>}/> */}
         <Route path="/TVShows" element={<TVShows/>}/>
         <Route path="/TVShows/:tvshow_id" element={<TVShowDetails/>}/>
         <Route path="/*" element={<NoMatch/>}/>

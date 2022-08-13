@@ -6,6 +6,9 @@ import TrendingMovies from '../Components/TrendingMovies'
 import TopRatedTV from '../Components/TopRatedTV'
 import TrendingTV from '../Components/TrendingTV'
 
+//Bezawit start
+import Movies from './Movies'
+//Bezawit end
 
 function Home() {
    
@@ -55,18 +58,9 @@ function Home() {
     <div className="home">
         <div className="home-container">
 
+<Movies movies={call1} />
 
-        {/* <HeroSlide/>
-            <div className="container">
-                <div className="section mb-3">
-                    <div className="section__header mb-2">
-                        <h2>Trending Movies</h2>
-                        <Link to="/movie">
-                            <OutlineButton className="small">View more</OutlineButton>
-                        </Link>
-                    </div>
-                    <MovieList category={category.movie} type={movieType.popular}/>
-                </div> */}
+      
     <TrendingMovies call1={call1}/>
     <TopRatedMovies call2={call2}/>
     <TrendingTV call3={call3}/>
