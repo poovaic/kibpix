@@ -1,10 +1,23 @@
 import React from 'react'
+import './trendingtv.scss'
+import { useNavigate } from 'react-router-dom';
 
-function TrendingTV() {
+const IMG_API = "https://image.tmdb.org/t/p/w1280";
+
+function TrendingTV({id,name,poster_path}) {
+
+  const navigate=useNavigate()
+
   return (
-    <div>
+    <div className="toprated-tv-component">
       
-    </div>
+      <img onClick={()=> navigate(`/TVShows/${id}`)} src={IMG_API + poster_path} alt={name}/>
+
+      <div className="tv-info">
+      <h2>{name}</h2>
+
+      </div>
+      </div>
   )
 }
 
