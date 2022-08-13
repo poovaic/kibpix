@@ -10,7 +10,7 @@ console.log('path',thumbnail.path)
   return (
     <div className="marvelcomics-component">
       
-      <img loading="lazy" onClick={()=> navigate(`/TVShows/${id}`)} src={`${thumbnail.path}/portrait_incredible.${thumbnail.extension}`}  alt={title}/>
+      <img loading="lazy" src={`${thumbnail.path}/portrait_incredible.${thumbnail.extension}`}  alt={title}/>
       
       <div className="comics-info">
       <h2>{title}</h2>
