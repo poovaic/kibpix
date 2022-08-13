@@ -58,6 +58,7 @@ img{
     opacity:0.3;
     width:290px;
     height:410px;
+    
     @include mobile {
         width: 210px;
         height:330px;
