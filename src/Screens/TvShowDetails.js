@@ -121,7 +121,7 @@ function TvShowDetails() {
                 </div>
                </div>
             </div>
-              <button className="returnTvShow" classonClick={() => navigate(-1)}>Return to Tvshows</button>
+              <button className="returnTvShow" onClick={() => navigate(-1)}>Return to Tvshows</button>
           </div>
          )
 }
