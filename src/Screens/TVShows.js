@@ -5,6 +5,7 @@ import OutputMap from '../Components/OutputMap';
 import Error from './Error';
 import Popular from "../Components/Popular";
 import TvRoundedIcon from '@mui/icons-material/TvRounded';
+import './tvshows.scss';
 
 
 function TVShows() {

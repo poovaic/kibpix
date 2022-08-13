@@ -1,9 +1,10 @@
 import  { useState , useEffect} from 'react'
 import {useParams} from "react-router-dom"
 import axios from "axios"
-//import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import React from 'react'
 import './tvshowdetails.scss';
+
 
 
 const picConfig = {
@@ -14,7 +15,7 @@ const picConfig = {
 
 function TvShowDetails() {
 
-      //const navigate = useNavigate();
+      const navigate = useNavigate();
       const {tvshow_id} = useParams();
       //console.log("tvshow_id",tvshow_id)
       const[tvTrailer , setTvTrailer]= useState('');
@@ -24,22 +25,19 @@ function TvShowDetails() {
        
        const VIDEO_URL = "https://www.youtube.com/watch?v="  ;
        const BASE_URL = "https://api.themoviedb.org/3"
-       const API_KEY = "b990552aaa8b2d4d2ccfc84e824bd713"
+       const API_KEY = "b990552aaa8b2d4d2ccfc84e824bd713";
 
-
-      //  async function getVideos(id ){
-   
-        
-
-      //   const videoresponse = await  axios.get(`${BASE_URL}/tv/${id}/videos?api_key=${API_KEY}&language=en-US`);
+ 
+       async function getVideos(id ){
+        const videoresponse = await  axios.get(`${BASE_URL}/tv/${id}/videos?api_key=${API_KEY}&language=en-US`);
       
-      //   console.log(" trailervideo",videoresponse);
-      //   let outputvideo= videoresponse.data;
-      //   console.log("cast", outputvideo)
-       
-      //       setTvTrailer(outputvideo);      
+        console.log(" trailervideo",videoresponse);
+        let outputvideo= videoresponse.data.results;
+        console.log("trailer", outputvideo)
+        console.log("trailerkey", outputvideo[0].key)
+            setTvTrailer(outputvideo);      
              
-      //  }
+       }
 
 
 
@@ -71,10 +69,10 @@ function TvShowDetails() {
          console.log("setcast",tvCast)
            console.log("description",description)
          useEffect(()=>{
-         // getVideos(tvshow_id)
+         getVideos(tvshow_id)
           getDetails(tvshow_id )
           getCredits(tvshow_id )
-            // getVideo(params.tvshow_id)
+            // getVideo(tvshow_id)
            },[tvshow_id])
 
 
@@ -124,13 +122,17 @@ function TvShowDetails() {
                </div>
                <div className='container'>
                 <div className='section mb-3'>
-                     {
-
-                     }
+                 {tvTrailer && tvTrailer.slice(0, 1).map((item) => {
+                  return <iframe
+                src={`https://www.youtube.com/embed/${item.key}`}
+                height="350"
+                width="450"
+                title="video"
+            ></iframe>}) }
                 </div>
                </div>
             </div>
-          
+              <button className="returnTvShow" classonClick={() => navigate(-1)}>Return to Tvshows</button>
           </div>
          )
 }
