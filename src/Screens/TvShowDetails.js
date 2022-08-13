@@ -17,7 +17,6 @@ function TvShowDetails() {
 
       const navigate = useNavigate();
       const {tvshow_id} = useParams();
-      //console.log("tvshow_id",tvshow_id)
       const[tvTrailer , setTvTrailer]= useState('');
       const[tvCast , setTvCast ] = useState('')
       const[description,setDescription ]=useState('')
@@ -43,21 +42,16 @@ function TvShowDetails() {
 
 
        async function getCredits(id ){
-   
-        
-
           const castresponse = await  axios.get(`${BASE_URL}/tv/${id}/credits?api_key=${API_KEY}&language=en-US`);
         
           console.log(" credits",castresponse);
           let output= castresponse.data;
           console.log("cast", output)
-         
               setTvCast(output);      
                
          }
 
          async function getDetails(id ){
-   
           const detailsresponse = await  axios.get(`${BASE_URL}/tv/${id}?api_key=${API_KEY}&language=en-US`);
           console.log(" credits",detailsresponse);
           let detail= detailsresponse.data;
@@ -68,21 +62,16 @@ function TvShowDetails() {
          }
          console.log("setcast",tvCast)
            console.log("description",description)
-         useEffect(()=>{
-         getVideos(tvshow_id)
-          getDetails(tvshow_id )
-          getCredits(tvshow_id )
-            // getVideo(tvshow_id)
-           },[tvshow_id])
+         
+           useEffect(()=>{
+               getVideos(tvshow_id)
+               getDetails(tvshow_id )
+               getCredits(tvshow_id )
+                      },[tvshow_id])
 
-
-        // console.log( description.backdrop_path)
-        // console.log( originalpic + description.backdrop_path)
         console.log( "overview",description.overview)
         console.log( "posterpath",`${picConfig.originalImage(description.poster_path )}`)
-        
-           //let backgroundimage = 
-
+     
          return(
           
 <div>
