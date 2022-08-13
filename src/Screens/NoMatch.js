@@ -3,9 +3,10 @@ import './nomatch.scss'
 
 function NoMatch() {
   return (
+
     <div className="p-nomatch-component">
-      <h1 className="p-nomatch-title">Oops... We are having trouble finding what you are looking for. Please click Home!</h1>
-      
+    <img src="https://internetdevels.com/sites/default/files/public/blog_preview/404_page_cover.jpg"  alt="404 error"/>
+
     </div>
   )
 }

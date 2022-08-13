@@ -27,24 +27,24 @@
 //     left:0;
 //     top:0;
 // }
+
+
 nav{
-    //background-color: black;
+
+    height:70px;
+    z-index: 99;
+    transition: height 0.3s ease, background-color 0.3s ease;
+    position:fixed;
     color:white;
     display:flex;
     justify-content: space-evenly;
     align-items: center;
     font-size:1.3rem;
-    //padding-bottom: 0.5em;
     width: 100%;
     box-shadow: 0px 2px 10px rgb(219, 16, 50) ;
     margin-bottom:50px;
-    height:80px;
-    //border-bottom:10px #a21a1a;
-    //box-shadow: 0 4px 2px -2px gray;
-    z-index: 99;
-    transition: height 0.3s ease, background-color 0.3s ease;
-    position:fixed;
-
+    
+    
     @include mobile {
         font-size:1rem;
     }

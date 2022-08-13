@@ -1,0 +1,155 @@
+@use "../Scss/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+.nomatch img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height:600px;
+}
+
+.tvShows{
+    padding-top: 100px;
+    background-color: black;
+}
+.tvShows h1{
+text-align: center;
+font-weight: 500;
+color: white;
+}
+
+.tvShows input{
+    margin-top: 10px;
+    margin-left: 630px;
+    align-items: center;
+    height: 30px;
+    width: 250px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border-color: antiquewhite;
+    background-color: white;
+}
+.tvShows button{
+    background-color: black;
+    color: white;
+    height: 30px;
+    border-radius: 10px;
+    width: 80px;
+    border-color: antiquewhite;
+}
+.tvShows button:hover {
+    border-color: red;
+}
+.tvShows input:hover {
+    
+    border-color: red;
+}
+
+.popular{
+    margin-top: 24px;
+    display:flex;
+    flex-wrap: wrap;
+     align-items: center;
+     justify-content: center; 
+    align-items: baseline;
+  }
+  
+  .populartv{
+     width:250px;
+     height:350px;
+    margin:1.5rem;
+    background: linear-gradient(to left, rgb(231, 13, 50));
+    border-radius: 20px;
+   box-shadow: 0 7px 12px rgb(164, 135, 140) ;
+  box-sizing: border-box;
+  
+  }
+  
+  .populartv img{
+    height:290px;
+    width:250px;
+    
+  }
+
+  .populartv:hover {
+    transform: scale(1.1);
+    box-shadow: 0 7px 12px rgb(219, 16, 50) ;
+    
+    }
+  
+  .populartv h3{
+    color:white;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 20px;
+  }
+
+  .populartv h3:hover {
+    color:red;
+}
+
+.SearchOutput{
+  margin-top: 24px;
+  display:flex;
+     flex-wrap:wrap;
+     align-items: center;
+     justify-content: center;
+     align-items: baseline;
+}
+
+
+
+    .SearchTile{
+      margin: 20px 20px 20px 20px;
+        
+     margin-top: 24px;
+     align-items: baseline;
+      width:250px;
+      height:350px;
+   
+        background: linear-gradient(to left, rgb(231, 13, 50));
+       border-radius: 20px;
+       box-shadow: 0 7px 12px rgb(164, 135, 140) ;
+   
+    }
+    
+    .SearchTile:hover{
+      transform: scale(1.1);
+      box-shadow: 0 7px 12px rgb(219, 16, 50) ;
+    }
+
+
+  .SearchTile_img{
+    height:290px;
+    width:250px;
+    object-fit: cover;
+    border-radius: 4px;
+    
+  }
+  
+  .SearchTile_name{
+   max-width: 200px;
+   color:white;
+   text-align: center;
+   font-weight: 700;
+   border-radius: 20px;
+ 
+  } 
+
+
+  .error h2{
+   color: azure;
+   text-align: center;
+   
+  }
+  body{
+   background-color: black;
+  }
+  *{
+    //background-color: black;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
