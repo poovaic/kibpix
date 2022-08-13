@@ -22,7 +22,11 @@
 //         background-color: $body-bg;
 //     }
  }
-
+// nav:hover{
+//     position:absolute;
+//     left:0;
+//     top:0;
+// }
 nav{
     //background-color: black;
     color:white;
@@ -39,7 +43,7 @@ nav{
     //box-shadow: 0 4px 2px -2px gray;
     z-index: 99;
     transition: height 0.3s ease, background-color 0.3s ease;
-    //position:fixed;
+    position:fixed;
 
     @include mobile {
         font-size:1rem;

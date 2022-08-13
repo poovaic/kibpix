@@ -23,6 +23,8 @@
 .title-trending-movies{
     color:white;
     font-family: $font-family;
+    //margin-top:50px;
+    padding-top:150px;
     @include mobile {
         font-size: 1rem;
 
@@ -39,6 +41,7 @@
 .title-trending-tv{
     color:white;
     font-family: $font-family;
+    //margin-top: 100px;
     @include mobile {
         font-size: 1rem;
 
