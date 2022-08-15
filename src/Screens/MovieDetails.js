@@ -83,7 +83,7 @@ function MovieDetails() {
                 <div className='movie-content__poster__img' style={{backgroundImage:`url(${picConfig.originalImage(description.poster_path || description.backdrop_path)})`}} ></div>
     
                  <div className='movie-content__info'>
-                  <h1 className='title'>{description.original_name}</h1>
+                  <h1 className='title'>{description.original_title}</h1>
                   <div className="genres">
                        {description.genres && description.genres.map((item) => (
                          <span className='genres__item'  key={item.name}>{item.name}</span>
