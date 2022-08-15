@@ -72,9 +72,12 @@ API LINK
 <img width="299" alt="wireframe-mobile-details" src="https://user-images.githubusercontent.com/105741410/184433559-28e485a0-6ceb-4cf5-a89f-30c942a893d5.png">
 
 
+
+
 COMPONENT HIERARCHY
 
 
+<img width="597" alt="Screen Shot 2022-08-15 at 9 31 20 AM" src="https://user-images.githubusercontent.com/105741410/184644965-e6da02ca-5f5c-4e1b-97cf-87975634696c.png">
 
 DESKTOP/TABLET - HOME PAGE
 
@@ -98,10 +101,15 @@ DESKTOP/TABLET - DETAILS
 <img width="1440" alt="Screen Shot 2022-08-15 at 9 00 00 AM" src="https://user-images.githubusercontent.com/105741410/184639978-5c318393-f718-448c-aec4-f46e71b717b1.png">
 
 
+NO MATCH
+
+
+![Screenshot_377](https://user-images.githubusercontent.com/105741410/184643125-061b1c39-1463-4d6f-8df9-9abf36fabad3.png)
+
 
 MVP
 
-The App utilises 2 API calls to simulate a Movie/TVShow app. 
+The App utilises 2 API calls to simulate a Movie/TVShow app.
 
 
 
