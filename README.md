@@ -139,6 +139,9 @@ We plan to add the following features:
 -User profile/signup
 -Comic Details page
 -Add similar videos for the user to view
+-Add details to footer
+
+
 
 
 
