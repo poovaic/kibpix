@@ -8,8 +8,7 @@ function MoviesMiddle(props) {
      value = {props.oneMovie}
      onChange = {props.getInput}
      />
-<button onClick={(event) => {props.searchMovie(event)
-                           props.clearMovieList(event)}}>Search Movie</button> </div>
+<button onClick={(event) => {props.searchMovie(event)}}>Search</button> </div>
   )
 }
 

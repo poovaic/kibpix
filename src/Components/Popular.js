@@ -1,5 +1,6 @@
 import React from 'react'
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 function Popular(props) {
    
@@ -15,9 +16,11 @@ function Popular(props) {
     <div className="popular">
     
         {map && map.map((item)=>{
-            return <div  className='populartv' key={item.id} >
+            return <div  className='populartv containerimg' key={item.id} >
               
-                <img  onClick={()=> navigate(`/TvShows/${item.id}`)}  src={w500Image + item.poster_path} alt="Post banner" />
+                <img src={w500Image + item.poster_path} alt="Post banner" />
+                {/* onClick={()=> navigate(`/TvShows/${item.id}`)} */}
+                <YouTubeIcon className="btn" onClick={()=> navigate(`/TvShows/${item.id}`)}/>
                 <h3>{item.name}</h3>
                 </div>
     

@@ -7,6 +7,7 @@ import Movies from './Screens/Movies';
 import TVShows from './Screens/TVShows';
 import NoMatch from './Screens/NoMatch';
 import TVShowDetails from './Screens/TVShowDetails';
+import MovieDetails from './Screens/MovieDetails';
 
 
 
@@ -20,7 +21,7 @@ function App() {
 
         <Route path="/" element={<Home/>}/>
         <Route path="/Movies" element={<Movies/>}/>
-        <Route path="/Movies/:id" element={<Movies/>}/>
+        <Route path="/Movies/:id" element={<MovieDetails/>}/>
         <Route path="/TVShows" element={<TVShows/>}/>
         <Route path="/TVShows/:tvshow_id" element={<TVShowDetails/>}/>
         <Route path="/*" element={<NoMatch/>}/>

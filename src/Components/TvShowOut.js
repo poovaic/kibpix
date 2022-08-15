@@ -1,5 +1,6 @@
 import React from 'react'
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 function TvShowOut(props) {
     const navigate = useNavigate();
@@ -8,8 +9,10 @@ function TvShowOut(props) {
 
   return (
 
-    <div className='SearchTile' key={props.id}>
-        <img  className='SearchTile_img' src={w500Image} onClick={()=> navigate(`/TvShows/${props.id}`)} alt="Post banner" />
+    <div className='SearchTile containerimg' key={props.id}>
+        <img  className='SearchTile_img' src={w500Image} alt="Post banner" />
+        {/* onClick={()=> navigate(`/TvShows/${props.id}`)}  */}
+        <YouTubeIcon className="btn" onClick={()=> navigate(`/TvShows/${props.id}`)}/>
         <p  className='SearchTile_name'>{props.title}</p>
         </div>
        

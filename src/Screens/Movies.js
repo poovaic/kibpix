@@ -2,13 +2,18 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import MovieList from './MovieList'
 import {callPopularMovies} from '../Services/ApiCall';
+import {searchMovies} from '../Services/ApiCall'
 import MovieFilter from './MovieFilter';
 import MoviesMiddle from './MoviesMiddle';
-import MovieDescription from './MovieDescription'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import './moviespopular.scss';
+import Error from './Error';
+import TvRoundedIcon from '@mui/icons-material/TvRounded';
 
 function Movies() {
-
+    const [click,setClick] = useState([]);
+    const [search,setSearch] = useState('');
+    const[error,setError] =useState('')
   const [popularMovie, setPopularMovie] = useState([])
 
   const BASE_URL = "https://api.themoviedb.org/3"
@@ -24,67 +29,69 @@ function Movies() {
     console.log("setpopluar movie",movieAll)
   }
 
+
+
   useEffect(()=>{
     pageLoad()
   },[])
-
+   
+  const buttonClick =async() =>{
+      
+    if(search!==""){
+    let response = await searchMovies(search);
+    console.log("api response",response.data.results)
+    setPopularMovie('');
+     if( response.data.results.length!==0){
+      let output=response.data.results;
+      console.log('output',output)
+       
+       setSearch('')
+       setClick(output)
+       setError("")
+    }
+      else{
+      setError(`There are no results for ${search} `)
+    }
+  }
+    else{
+      
+        setError("Type the name of the Tv show you want in the box")
+    }
  
-const clearMovieList = () => setPopularMovie('') ;
-// setPopularMovie('')
-
-//https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=en-US&page=1
-
-
-// const url = `${BASE_URL}/search/movie?api_key=API_KEY&query=Jack+Reacher`
-  // https://api.themoviedb.org/3/search/movie?api_key={api_key}&query=Jack+Reacher
-  // https://api.themoviedb.org/3/movie/343611?api_key={api_key}
-
-  // https://image.tmdb.org/t/p/w500/${props.movies.poster_path}
-
-// const [oneMovie, setOneMovie] = useState('');
-// console.log(oneMovie)
-
-// const getInput = (event) => setOneMovie(event.target.value)
+}
+console.log("click", click);
+  
+ 
+console.log('popular',popularMovie)
 
   return (
-    <div>
-<Router>
-  <Route exact path="/">
-  <MovieFilter data={popularMovie}/>
-  </Route>
-  <Route path="/movies/:id">
-    <MovieDescription data={popularMovie}/>
-    </Route>
-    </Router>
-     {/* <MovieFilter data = {popularMovie}/> */}
+    <div className='tvShows'>
 
-
-{/* 
-     <h1>Movies</h1>
-      <input type="text" 
-      value = {props.oneMovie}
-      onChange = {props.getInput}
-      />
-<button onClick={(event) => {props.searchMovie(event)
-                            clearMovieList()}}>Search Movie</button>  */}
-
-<MoviesMiddle clearMovieList={event => clearMovieList(event)}/>
-
+          <h1>< TvRoundedIcon />  Movies  < TvRoundedIcon />
+         </h1>
+        <input  type="text" placeholder="Search Your Movies...."  onChange={(e)=>setSearch(e.target.value)} />
+     
+     <button    onClick={buttonClick}  > Search </button>
+     <div>
+   
+   
+     <MovieFilter data = {click}/> 
       
-      {/* <input type="text" 
-      value = {oneMovie}
-      onChange = {getInput}
-      />
-
-      <button>Search</button> */}
-
-{popularMovie.map((singleMovie, index) => {
-  return <MovieList movieData={singleMovie} key={index} />
+     
+<div className="popular">
+  
+{popularMovie && popularMovie.map((singleMovie, index) => {
+  return <div className="popular"><MovieList movieData={singleMovie} key={index} /></div>
   
 })}
+</div>
 
- {/* <MovieFilter data = {popularMovie}/> */}
-     
+ </div>
+     <div>
+      { error!=="" && <Error error={error}/>}
+
+    </div>
+
     </div>
   )
 }

@@ -66,9 +66,10 @@ color: white;
   
   }
   
-  .populartv img{
+  .populartvimg{
     height:290px;
     width:250px;
+  
     
   }
 
@@ -78,14 +79,14 @@ color: white;
     
     }
   
-  .populartv h3{
+  .populartvh3{
     color:white;
     text-align: center;
     font-weight: 700;
     border-radius: 20px;
   }
 
-  .populartv h3:hover {
+  .populartvh3:hover {
     color:red;
 }
 
@@ -134,6 +135,7 @@ color: white;
    text-align: center;
    font-weight: 700;
    border-radius: 20px;
+   font-size: large;
  
   } 
 
@@ -143,14 +145,151 @@ color: white;
    text-align: center;
    
   }
-  body{
-  background-color: black;
+
+ 
+  // body{
+  // background-color: black;
   
-  }
+  // }
   *{
     //background-color: black;
     scroll-behavior: smooth;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
   }
+
+
+
+
+ 
+    .containerimg {
+      position: relative;
+       width: 100%;
+      max-width: 400px;
+    }
+    
+    .containerimg img {
+      width: 100%;
+      height: auto;
+      // display:block;
+    }
+    .containerimg img:hover + .btn{
+      display:block;
+    }
+    
+    .containerimg .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      // background-color: red;
+      background: none;
+      width:50px;
+      height:2550px;
+      // color: black;
+      // font-size: 16px;
+      // padding: 12px 24px;
+      // border: none;
+      cursor: pointer;
+      // border-radius: 5px;
+      // text-align: center;
+      // box-shadow: 0 7px 12px rgb(219, 16, 50) ;
+      
+      display:none;
+     
+      
+    }
+    .icon-img{
+      width:20px;
+      height:20px;
+      
+    }
+    
+    // // .containerimg .btn:hover + .btn {
+    // //   color: purple;
+    // //   display:block;
+      
+    // }
+
+    .btn{
+      display:none;
+     width:50px;
+     height:50px;
+    }
+
+    .btn:hover{
+      display:block;
+      visibility:visible;
+      color:red;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    .containericon {
+      position: relative;
+       width: 100%;
+      max-width: 400px;
+    }
+    
+    .containericon img {
+      width: 100%;
+      height: auto;
+      // display:block;
+    }
+    .containericon img:hover + .btn{
+      display:block;
+    }
+    
+    .containericon .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      // background-color: red;
+      background: none;
+      width:50px;
+      height:2550px;
+      // color: black;
+      // font-size: 16px;
+      // padding: 12px 24px;
+      // border: none;
+      cursor: pointer;
+      // border-radius: 5px;
+      // text-align: center;
+      // box-shadow: 0 7px 12px rgb(219, 16, 50) ;
+      
+      display:none;
+     
+      
+    }
+    .icon-img{
+      width:20px;
+      height:20px;
+      
+    }
+    
+    // // .containerimg .btn:hover + .btn {
+    // //   color: purple;
+    // //   display:block;
+      
+    // }
+
+  
+
+
 
