@@ -79,15 +79,20 @@ COMPONENT HIERARCHY
 DESKTOP/TABLET - HOME PAGE
 
 
+![Screenshot (375)](https://user-images.githubusercontent.com/105738289/184567039-0f079c37-6657-42e1-b1bf-b49480b0e986.png)
 
 DESKTOP/TABLET - MOVIES
+![Screenshot (371)](https://user-images.githubusercontent.com/105738289/184567047-c390d7a8-de45-4544-9e34-682a19fe1ad4.png)
 
 DESKTOP/TABLET - TV SHOWS
+![Screenshot (373)](https://user-images.githubusercontent.com/105738289/184567111-59bedd72-3af1-4c49-8b9b-4b4937f5f97b.png)
 
 DESKTOP/TABLET - DETAILS
 
 
+![Screenshot (376)](https://user-images.githubusercontent.com/105738289/184567433-2a05ef0b-fea0-43d2-b500-53fcf9ff0b72.png)
 
+![Screenshot (374)](https://user-images.githubusercontent.com/105738289/184567129-3426e769-4ca6-4ada-98cd-911248589818.png)
 
 
 
