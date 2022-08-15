@@ -4,7 +4,26 @@ import axios from "axios";
 const BASE_URL = "https://api.themoviedb.org/3"
 const API_KEY = "b990552aaa8b2d4d2ccfc84e824bd713"
 
+//API CALL FOR POPULAR MOVIES
+
+export async function callPopularMovies(){
+    const response_PopularMovies = await axios.get(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-US&page=1`)
+    return response_PopularMovies;
+}
+//https://api.themoviedb.org/3/movie/popular?api_key=API_KEY&language=en-US&page=1
+
 //API CALL FOR TOP RATED MOVIES
+
+
+
+export async function searchMovies(search){
+
+    const response_searchMovies = await axios.get(`${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&query=${search}`)
+
+return response_searchMovies
+}
+
+
     export async function callTopRatedMovies(){
 
         const response_TopRatedMovies = await axios.get(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`)
