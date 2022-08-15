@@ -78,22 +78,31 @@ COMPONENT HIERARCHY
 
 DESKTOP/TABLET - HOME PAGE
 
+<img width="1440" alt="Desktop-HomePage-Kibpix" src="https://user-images.githubusercontent.com/105741410/184639250-3bd240dd-1b0b-452f-a420-e12cf5a6750f.png">
 
 
 DESKTOP/TABLET - MOVIES
+<img width="1440" alt="Screen Shot 2022-08-15 at 8 59 16 AM" src="https://user-images.githubusercontent.com/105741410/184639485-33f5379c-ac06-40b2-bb60-118be69bee12.png">
+
+
 
 DESKTOP/TABLET - TV SHOWS
+
+<img width="1440" alt="Screen Shot 2022-08-15 at 9 00 00 AM" src="https://user-images.githubusercontent.com/105741410/184639579-3279667e-da69-42c3-ab47-c832d16afd10.png">
+
 
 DESKTOP/TABLET - DETAILS
 
 
 
+<img width="1440" alt="Screen Shot 2022-08-15 at 9 00 00 AM" src="https://user-images.githubusercontent.com/105741410/184639978-5c318393-f718-448c-aec4-f46e71b717b1.png">
 
 
 
 MVP
 
-The App utilises 2 API calls, done as 
+The App utilises 2 API calls to simulate a Movie/TVShow app. 
+
 
 
 
