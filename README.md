@@ -110,6 +110,34 @@ NO MATCH
 MVP
 
 The App utilises 2 API calls to simulate a Movie/TVShow app.
+It has a Homepage, TV Shows page, Movies Page, TV Show Details page, Movie Details page, Error Page. 
+The App was developed in an integrated environment and utilises the below:
+-Git
+-cryptojs
+-mui materials icon
+
+
+SWOT ANALYSIS
+
+STRENGTHS:
+Api - TheMovieDB was a great API to work with. It has unlimited calls and it saved a lot of hassle in the development stage.
+
+WEAKNESS:
+User interface - Since it is an entertainment app, the display and userinterface has be effective and user friendly.
+
+
+OPPORTUNITIES:
+API - The API is diverse and there is a lot of detail that we can add to our APP.
+
+THREATS:
+API Data - Some images and videos were unavailable during extraction of API Data. We had to work around that with our code by adding conditionality to the api response.
+Integrated Development - Conflict resolution was a threat at the beginning of the project but we managed to resolve the few conflicts we had easily.
+
+POST MVP- 
+We plan to add the following features:
+-Dark/light mode
+-User profile/signup
+-Comic Details page
 
 
 
