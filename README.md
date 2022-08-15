@@ -3,7 +3,7 @@
 
 App OverView
     KibPix is a Movie and TV Shows App, created using React. The App will display Trending and Popular Movie and TV shows. The user will be able to search for a particular Movie/TV Show and view the Summary, details and cast of the particular show. It also displays popular Marvel Comics.
-    [Use the App here!]()
+    [Use the App here!](https://kibpix.netlify.app/)
     
     Group project by:
     Bezawit Bekele
