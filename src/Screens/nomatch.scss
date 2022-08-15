@@ -1,0 +1,25 @@
+@use "../Scss/" as *;
+
+*{
+    // background-color: black;
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+
+}
+// .p-nomatch-component{
+//     background-color: black;
+//     height:80vh;
+//     display:flex;
+//     justify-content: center;
+// }
+
+
+.p-nomatch-component img {
+    padding-top: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height:600px;
+  }
